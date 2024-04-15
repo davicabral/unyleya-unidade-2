@@ -9,21 +9,22 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var issue: Issue?
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let photoData = issue?.photo {
+            imageView.image = UIImage(data: photoData)
+        }
+        
+        nameLabel.text = issue?.name
+        addressLabel.text = issue?.location
+        descriptionLabel.text = issue?.explanation
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

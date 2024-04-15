@@ -52,6 +52,16 @@ class ViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let issue = issues?[indexPath.row] else { return }
+        performSegue(withIdentifier: "detailSegue", sender: issue)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? DetailViewController, let issue = sender as? Issue {
+            controller.issue = issue
+        }
+    }
 
 }
 

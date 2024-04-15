@@ -40,9 +40,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="81T-MX-LKo" kind="show" id="TiA-xm-1Ig"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -57,6 +54,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="81T-MX-LKo" kind="show" identifier="detailSegue" id="aCj-vg-me5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCE-J6-WtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,14 +67,14 @@
             <objects>
                 <viewController id="eFk-Vt-KaQ" customClass="FormViewController" customModule="Unidade3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sF3-vi-yXl">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTw-Q7-Hqn">
-                                <rect key="frame" x="146.66666666666666" y="149" width="100" height="100"/>
+                                <rect key="frame" x="96.666666666666686" y="72" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nTw-Q7-Hqn" secondAttribute="height" multiplier="1:1" id="0ng-va-RmY"/>
-                                    <constraint firstAttribute="height" constant="100" id="uBn-Tf-lhA"/>
+                                    <constraint firstAttribute="height" constant="200" id="uBn-Tf-lhA"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Photo"/>
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OIu-gJ-t1M">
-                                <rect key="frame" x="8" y="289" width="377" height="384"/>
+                                <rect key="frame" x="8" y="312" width="377" height="384"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Aw-wV1">
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="34"/>
@@ -113,7 +113,7 @@
                         <constraints>
                             <constraint firstItem="OIu-gJ-t1M" firstAttribute="top" secondItem="nTw-Q7-Hqn" secondAttribute="bottom" constant="40" id="4xy-h3-nnP"/>
                             <constraint firstItem="Zgb-ys-CO7" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OIu-gJ-t1M" secondAttribute="bottom" constant="8" id="9Wa-Ql-e2A"/>
-                            <constraint firstItem="nTw-Q7-Hqn" firstAttribute="top" secondItem="Zgb-ys-CO7" secondAttribute="top" constant="105" id="CxX-35-qrh"/>
+                            <constraint firstItem="nTw-Q7-Hqn" firstAttribute="top" secondItem="Zgb-ys-CO7" secondAttribute="top" constant="16" id="CxX-35-qrh"/>
                             <constraint firstItem="nTw-Q7-Hqn" firstAttribute="centerX" secondItem="Zgb-ys-CO7" secondAttribute="centerX" id="IoK-Te-WJD"/>
                             <constraint firstItem="OIu-gJ-t1M" firstAttribute="leading" secondItem="Zgb-ys-CO7" secondAttribute="leading" constant="8" id="JX9-Ic-wPd"/>
                             <constraint firstItem="Zgb-ys-CO7" firstAttribute="trailing" secondItem="OIu-gJ-t1M" secondAttribute="trailing" constant="8" id="wAz-PU-GpT"/>
@@ -170,7 +170,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SWs-WI-DKn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hfg-sI-clv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -190,7 +190,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-6F-Hf2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-6F-Hf2">
                                 <rect key="frame" x="8" y="103" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Nec-gS-P5S"/>
@@ -232,13 +232,28 @@
                             <constraint firstItem="wcm-Wc-796" firstAttribute="trailing" secondItem="C5Q-Kf-UVM" secondAttribute="trailing" constant="8" id="zma-0R-Elf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Hid-gc-kmO"/>
+                    <navigationItem key="navigationItem" id="Hid-gc-kmO">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="3LJ-Pq-cMP">
+                            <connections>
+                                <segue destination="SWs-WI-DKn" kind="presentation" identifier="editSegue" id="xW6-6S-ot0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="jqx-Fp-Zv4" id="CmK-vw-Dg0"/>
+                        <outlet property="descriptionLabel" destination="C5Q-Kf-UVM" id="U89-IN-xpW"/>
+                        <outlet property="imageView" destination="W6b-6F-Hf2" id="WN6-R9-5d2"/>
+                        <outlet property="nameLabel" destination="CNx-78-Awc" id="eLr-2A-ne8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30r-bt-dFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="254" y="705"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xW6-6S-ot0"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

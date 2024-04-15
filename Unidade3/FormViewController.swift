@@ -8,6 +8,10 @@
 import UIKit
 import PhotosUI
 
+protocol FormViewControllerDelegate: AnyObject {
+    func didSaveIssue(_ issue: Issue?)
+}
+
 class FormViewController: UIViewController {
 
     private let coreDataManager: CoreDataManager = CoreDataManager()
@@ -17,6 +21,9 @@ class FormViewController: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var photoButton: UIButton!
 
+    var issue: Issue?
+    weak var delegate: FormViewControllerDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +31,18 @@ class FormViewController: UIViewController {
         textVIew.layer.borderColor = color
         textVIew.layer.borderWidth = 0.5
         textVIew.layer.cornerRadius = 5
+
+        if let issue {
+            textVIew.text = issue.explanation
+            nameTextField.text = issue.name
+            addressTextField.text = issue.location
+
+            if let photoData = issue.photo {
+                let image = UIImage(data: photoData)
+                photoButton.setBackgroundImage(image, for: .normal)
+                photoButton.setTitle(nil, for: .normal)
+            }
+        }
     }
 
     @IBAction func didTapCancelButton(_ sender: Any) {
@@ -31,12 +50,15 @@ class FormViewController: UIViewController {
     }
 
     @IBAction func didTapSaveButton(_ sender: Any) {
-        let issue = Issue(context: coreDataManager.context)
-        issue.name = nameTextField.text
-        issue.location = addressTextField.text
-        issue.explanation = textVIew.text
-        issue.photo = photoButton.backgroundImage(for: .normal)?.jpegData(compressionQuality: 0.2)
-        issue.createdAt = Date()
+        
+        let handledIssue = issue ?? Issue(context: coreDataManager.context)
+        handledIssue.name = nameTextField.text
+        handledIssue.location = addressTextField.text
+        handledIssue.explanation = textVIew.text
+        handledIssue.photo = photoButton.backgroundImage(for: .normal)?.jpegData(compressionQuality: 0.2)
+        handledIssue.createdAt = handledIssue.createdAt ?? Date()
+        
+        delegate?.didSaveIssue(handledIssue)
         coreDataManager.saveContext()
         dismiss(animated: true)
     }

@@ -18,13 +18,30 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure(with: issue)
+    }
+
+    private func configure(with issue: Issue?) {
         if let photoData = issue?.photo {
             imageView.image = UIImage(data: photoData)
         }
-        
+
         nameLabel.text = issue?.name
         addressLabel.text = issue?.location
         descriptionLabel.text = issue?.explanation
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let navigationController = segue.destination as? UINavigationController,
+           let topViewController = navigationController.topViewController as? FormViewController {
+            topViewController.issue = issue
+            topViewController.delegate = self
+        }
+    }
+}
+
+extension DetailViewController: FormViewControllerDelegate {
+    func didSaveIssue(_ issue: Issue?) {
+        configure(with: issue)
+    }
 }

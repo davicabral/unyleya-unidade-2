@@ -40,6 +40,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="81T-MX-LKo" kind="show" id="TiA-xm-1Ig"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -178,6 +181,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1PF-F8-ait" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1139.6946564885495" y="-25.35211267605634"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="bpN-0A-DbA">
+            <objects>
+                <viewController id="81T-MX-LKo" customClass="DetailViewController" customModule="Unidade3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eTn-k8-b2v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-6F-Hf2">
+                                <rect key="frame" x="8" y="103" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Nec-gS-P5S"/>
+                                    <constraint firstAttribute="width" secondItem="W6b-6F-Hf2" secondAttribute="height" multiplier="1:1" id="d9D-8F-nzV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNx-78-Awc">
+                                <rect key="frame" x="216" y="103" width="169" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-Fp-Zv4">
+                                <rect key="frame" x="216" y="131.33333333333334" width="169" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5Q-Kf-UVM">
+                                <rect key="frame" x="8" y="311" width="377" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wcm-Wc-796"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CNx-78-Awc" firstAttribute="top" secondItem="W6b-6F-Hf2" secondAttribute="top" id="4OV-my-hI4"/>
+                            <constraint firstItem="C5Q-Kf-UVM" firstAttribute="leading" secondItem="wcm-Wc-796" secondAttribute="leading" constant="8" id="OvT-2c-1gu"/>
+                            <constraint firstItem="W6b-6F-Hf2" firstAttribute="leading" secondItem="wcm-Wc-796" secondAttribute="leading" constant="8" id="PrO-7y-EA5"/>
+                            <constraint firstItem="jqx-Fp-Zv4" firstAttribute="leading" secondItem="W6b-6F-Hf2" secondAttribute="trailing" constant="8" id="TqM-hz-ufe"/>
+                            <constraint firstItem="W6b-6F-Hf2" firstAttribute="top" secondItem="wcm-Wc-796" secondAttribute="top" id="UIY-Np-iTt"/>
+                            <constraint firstItem="wcm-Wc-796" firstAttribute="trailing" secondItem="jqx-Fp-Zv4" secondAttribute="trailing" constant="8" id="XEr-Bq-mJu"/>
+                            <constraint firstItem="C5Q-Kf-UVM" firstAttribute="top" secondItem="W6b-6F-Hf2" secondAttribute="bottom" constant="8" symbolic="YES" id="gDu-J3-vMs"/>
+                            <constraint firstItem="wcm-Wc-796" firstAttribute="trailing" secondItem="CNx-78-Awc" secondAttribute="trailing" constant="8" id="k9A-KF-9OL"/>
+                            <constraint firstItem="CNx-78-Awc" firstAttribute="leading" secondItem="W6b-6F-Hf2" secondAttribute="trailing" constant="8" symbolic="YES" id="lmQ-9R-x1I"/>
+                            <constraint firstItem="jqx-Fp-Zv4" firstAttribute="top" secondItem="CNx-78-Awc" secondAttribute="bottom" constant="8" id="rGx-c6-368"/>
+                            <constraint firstItem="wcm-Wc-796" firstAttribute="trailing" secondItem="C5Q-Kf-UVM" secondAttribute="trailing" constant="8" id="zma-0R-Elf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hid-gc-kmO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30r-bt-dFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="705"/>
         </scene>
     </scenes>
     <resources>
